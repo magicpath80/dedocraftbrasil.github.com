@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carregando Servidor GMod</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+    body {
+    /* ... outras configurações ... */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('blob:https://imgur.com/05b73f29-eca9-42bf-ba4c-724ec23a7f1d');
+    background-size: cover;
+    background-position: center;
+    }
+
+
+        /* Organiza tudo em um painel horizontal perfeito */
+        .container {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            background: rgba(20, 20, 24, 0.9);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 90%;
+            max-width: 950px;
+            backdrop-filter: blur(10px);
+            align-items: center;
+        }
+
+        /* Lado Esquerdo: Logo e Nome */
+        .left-side {
+            flex: 1;
+            text-align: center;
+        }
+
+        .logo-container {
+            margin-bottom: 15px;
+        }
+
+        .gmod-logo {
+            width: 130px;
+            height: auto;
+            animation: flutuar 3s ease-in-out infinite;
+        }
+
+        @keyframes flutuar {
+            0% { transform: translateY(0px); filter: drop-shadow(0px 4px 8px rgba(0, 255, 110, 0.3)); }
+            50% { transform: translateY(-10px); filter: drop-shadow(0px 12px 16px rgba(0, 255, 166, 0.5)); }
+            100% { transform: translateY(0px); filter: drop-shadow(0px 4px 8px rgba(255, 159, 67, 0.3)); }
+        }
+
+        h1 {
+            color: #00ff15;
+            font-size: 2.4rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            line-height: 1.2;
+        }
+
+        /* Lado Central: Regras */
+        .center-side {
+            flex: 1.2;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .center-side h3 {
+            color: #ffffff;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+            border-bottom: 2px solid #ffffff;
+            padding-bottom: 5px;
+        }
+
+        .center-side ul {
+            list-style-position: inside;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #dddddd;
+        }
+
+        /* Lado Direito: Perfil do Jogador e Status */
+    .right-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza tudo horizontalmente */
+    text-align: center;  /* Força o texto a ficar no meio */
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    justify-content: center; /* Distribui o espaço igualmente */
+    }
+
+
+        /* Sistema de Avatar da Steam */
+        .avatar-box {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .steam-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 3px solid #00d2d3;
+            box-shadow: 0 0 15px rgba(0, 210, 211, 0.4);
+            background: #2f3640;
+        }
+
+        .player-welcome {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #00d2d3;
+            margin-bottom: 5px;
+            max-width: 220px;
+            word-wrap: break-word;
+        }
+
+        .map-name {
+            font-style: italic;
+            font-size: 0.95rem;
+            color: #54a0ff;
+            margin-bottom: 15px;
+        }
+
+        .progress-container {
+            background: #2f3640;
+            border-radius: 20px;
+            height: 14px;
+            width: 100%;
+            overflow: hidden;
+            border: 1px solid #485460;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #00d2d3, #54a0ff);
+            height: 100%;
+            width: 15%;
+            transition: width 0.3s ease;
+        }
+
+        .status-text {
+            font-size: 0.85rem;
+            color: #aaaaaa;
+            margin-top: 10px;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- COLUNA 1: LOGO -->
+<!-- COLUNA 1: LOGO DO DEDOCRAFT -->
+<div class="left-side">
+    <div class="logo-container">
+        <!-- Substitua pelo nome do arquivo da sua logo nova -->
+        <img src="logo.png" class="gmod-logo" alt="Logo Dedocraft">
+    </div>
+    <!-- Atualizando o título do projeto grande -->
+    <h1>Dedocraft<br>Server<br>Brasil</h1>
+</div>
+        
+        <!-- COLUNA 2: REGRAS -->
+        <div class="center-side">
+            <h3>📜 Regras do Servidor</h3>
+            <ul>
+                <li>Proibido spam de props/travar o server.</li>
+                <li>Respeite os outros no voice/chat.</li>
+                <li>Nao use noclip para atrapalhar os outros.</li>
+                <li>Divirta-se e use a criatividade!</li>
+            </ul>
+        </div>
+
+        <!-- COLUNA 3: JOGADOR E PROGRESSO -->
+        <div class="right-side">
+            <div class="avatar-box">
+                <!-- Imagem padrão caso a Steam demore a responder -->
+                <img id="player-avatar" class="steam-avatar" src="https://steamstatic.com" alt="Avatar">
+            </div>
+            <div class="player-welcome" id="player-name">Carregando...</div>
+            <div class="map-name" id="map-name">gm_flatgrass</div>
+            
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <div class="status-text" id="status-text">Conectando ao servidor...</div>
+        </div>
+
+    </div>
+
+    <!-- Scripts de comunicação nativa do GMod -->
+    <script>
+    function GameDetails( servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, language ) {
+    // Atualiza o texto com o nome do mapa (ex: gm_flatgrass)
+    document.getElementById('map-name').innerText = "Mapa: " + mapname;
+
+    // Troca a foto de fundo do corpo do site para a imagem do mapa atual
+    // Se o mapa for gm_flatgrass, vai puxar: mapas/gm_flatgrass.jpg
+    document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('mapas/" + mapname + ".jpg')";
+}
+
+
+        // Função nativa do GMod para atualizar o texto da barra
+        function SetStatusChanged( status ) {
+            document.getElementById('status-text').innerText = status;
+            
+            let bar = document.getElementById('progress-bar');
+            if (status.indexOf("Downloading") !== -1) {
+                bar.style.width = "45%";
+            } else if (status.indexOf("Workshop") !== -1) {
+                bar.style.width = "75%";
+            } else if (status.indexOf("Sending client info") !== -1) {
+                bar.style.width = "100%";
+                document.getElementById('player-name').innerText = "Entrando...";
+            }
+        }
+
+        // Captura o nome do jogador pirata ou original vindo das configurações locais do GMod
+        if(window.navigator && window.navigator.userAgent) {
+            // O GMod costuma injetar o nick do jogador no topo da janela ou via cookies locais
+            document.getElementById('player-name').innerText = "Jogador";
+        }
+    </script>
+</body>
+</html>
